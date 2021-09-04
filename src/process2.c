@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/04 04:39:29 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/09/04 04:51:40 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/09/04 16:04:13 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ int	join_elem_and_recup(t_pipex *p, char *str)
 	while (p->all_path[++i] != NULL)
 	{
 		free(p->tab_exe[0]);
-		p->tab_exe[0] == NULL;
+		p->tab_exe[0] = NULL;
 		p->tab_exe[0] = join_modif(p->all_path[i], '/', str);
 		if (p->tab_exe[0] == NULL)
 		{

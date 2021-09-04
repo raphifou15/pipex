@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 05:05:17 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/09/04 07:13:20 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/09/04 21:16:41 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,10 @@ void	make_first_child_process2(char **env, t_pipex *p)
 void	make_first_child_process(char **argv, char **env, t_pipex *p)
 {
 	close(p->fd[0]);
-	p->tab_exe = ft_split(p->cmd1, ' ');
+	if (p->cmd1 == NULL || p->cmd1[0] == '\0' || p->cmd1[0] == ' ')
+		p->tab_exe = ft_split2(p->cmd1);
+	else
+		p->tab_exe = ft_split(p->cmd1, ' ');
 	if (p->tab_exe == NULL)
 	{
 		close(p->fd[1]);
@@ -79,7 +82,10 @@ void	make_second_child_process2(char **env, t_pipex *p)
 void	make_second_child_process(char **argv, char **env, t_pipex *p)
 {
 	close(p->fd[1]);
-	p->tab_exe = ft_split(p->cmd2, ' ');
+	if (p->cmd2 == NULL || p->cmd2[0] == '\0' || p->cmd2[0] == ' ')
+		p->tab_exe = ft_split2(p->cmd2);
+	else
+		p->tab_exe = ft_split(p->cmd2, ' ');
 	if (p->tab_exe == NULL)
 	{
 		close(p->fd[0]);

@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 20:39:18 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/09/04 06:02:36 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/09/04 16:03:01 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,6 @@ void	print_msg_error(int err)
 
 int	check_error(int argc)
 {
-	int	i;
-
-	i = -1;
 	if (argc != 5)
 	{
 		ft_putstr_err("Error\nExemple : ");

@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 16:30:51 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/09/04 07:44:24 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/09/04 18:57:27 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,7 @@ int		ft_strncmp(const char *s1, const char *s2, int n);
 char	**ft_split(const char *str, char c);
 void	ft_putchar_err(char c);
 void	ft_putstr_err(char *str);
+
+char	**ft_split2(char *str);
+char	**ft_split2_2(char *str);
 #endif

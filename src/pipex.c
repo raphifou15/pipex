@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 16:28:00 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/09/04 04:19:21 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/09/04 16:06:11 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,9 +72,9 @@ int	ft_pipex(char **argv, char **env, t_pipex *p)
 			close(p->fd[1]);
 			close(p->fd[0]);
 		}
+		waitpid(p->pid2, NULL, 0);
 	}
 	waitpid(p->pid, NULL, 0);
-	waitpid(p->pid2, NULL, 0);
 	ft_check_and_free(p, 0);
 	return (0);
 }
