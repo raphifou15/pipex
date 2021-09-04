@@ -6,52 +6,13 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 20:46:29 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/09/03 20:39:19 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/09/04 07:26:03 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
-void	ft_putchar_err(char c)
-{
-	write(2, &c, 1);
-}
-
-void	ft_putstr(char *str)
-{
-	int	i;
-
-	i = -1;
-	while (str[++i] != '\0')
-		write(1, &str[i], 1);
-}
-
-void	ft_putstr_err(char *str)
-{
-	int	i;
-
-	i = -1;
-	while (str[++i] != '\0')
-		write(2, &str[i], 1);
-}
-
-int		ft_strlen(char *str)
-{
-	int	i;
-
-	i = -1;
-	while (str[++i] != '\0')
-		;
-	return (i);
-}
-
-
-int		ft_strlen2(const char *str, char c)
+int	ft_strlen2(const char *str, char c)
 {
 	int	i;
 
@@ -61,7 +22,7 @@ int		ft_strlen2(const char *str, char c)
 	return (i);
 }
 
-int		ft_strcmp(char *s1, char *s2)
+int	ft_strcmp(char *s1, char *s2)
 {
 	int	i;
 
@@ -109,7 +70,7 @@ char	*ft_strndup(char *str, int n)
 	return (str2);
 }
 
-int		ft_strncmp(const char *s1, const char *s2, int n)
+int	ft_strncmp(const char *s1, const char *s2, int n)
 {
 	int	i;
 

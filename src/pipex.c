@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 16:28:00 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/09/03 20:28:28 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/09/04 04:19:21 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 t_pipex	*init_pipex(void)
 {
 	t_pipex	*p;
-	
+
 	p = malloc(sizeof(t_pipex));
 	if (p == NULL)
 		return (NULL);
-	p->pid	= 0;
+	p->pid = 0;
 	p->cmd1 = NULL;
 	p->cmd2 = NULL;
 	p->path = NULL;
@@ -60,24 +60,21 @@ int	ft_pipex(char **argv, char **env, t_pipex *p)
 	p->pid = fork();
 	if (p->pid < 0)
 		return (print_error(p, errno));
-	// commence ici le dur du sujet;
 	if (p->pid == 0)
-		make_first_child_process(argv, env, p);
+		make_second_child_process(argv, env, p);
 	else
 	{
 		p->pid2 = fork();
 		if (p->pid2 == 0)
-			make_second_child_process(argv, env, p);
+			make_first_child_process(argv, env, p);
 		else
 		{
 			close(p->fd[1]);
 			close(p->fd[0]);
 		}
 	}
-	if (p->pid2 != 0)
-		wait(NULL);
-	if (p->pid != 0)
-		wait(NULL);
+	waitpid(p->pid, NULL, 0);
+	waitpid(p->pid2, NULL, 0);
 	ft_check_and_free(p, 0);
 	return (0);
 }

@@ -6,7 +6,7 @@
 #    By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/30 18:49:13 by rkhelif           #+#    #+#              #
-#    Updated: 2021/09/01 17:02:43 by rkhelif          ###   ########.fr        #
+#    Updated: 2021/09/04 07:19:52 by rkhelif          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,10 @@ DIR_INC = inc
 SRCS = pipex.c \
 		error1.c \
 		utilities1.c \
+		utilities2.c \
 		free.c \
 		process.c \
+		process2.c \
 		ft_split.c
 
 OBJS = ${addprefix ${DIR_OBJ}/,${SRCS:.c=.o}}

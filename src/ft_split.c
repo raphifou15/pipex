@@ -6,13 +6,13 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 15:08:02 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/09/01 17:46:55 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/09/04 04:32:52 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-int		go_to_new_line(const char *str, char c)
+int	go_to_new_line(const char *str, char c)
 {
 	int	i;
 
@@ -44,7 +44,7 @@ char	*malloc_line(const char *str, char c)
 	return (str2);
 }
 
-int		ft_lines(const char *str, char c)
+int	ft_lines(const char *str, char c)
 {
 	int	i;
 	int	nbr;
