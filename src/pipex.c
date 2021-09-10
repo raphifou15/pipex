@@ -6,7 +6,7 @@
 /*   By: rkhelif <rkhelif@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 16:28:00 by rkhelif           #+#    #+#             */
-/*   Updated: 2021/09/04 16:06:11 by rkhelif          ###   ########.fr       */
+/*   Updated: 2021/09/10 23:11:21 by rkhelif          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	recup_value(char **argv, char **env, t_pipex *p)
 	p->cmd2 = ft_strdup(argv[3]);
 	if (p->cmd2 == NULL)
 		return (ft_check_and_free(p, 2) + 1);
-	while (ft_strncmp(env[++i], "PATH", 4) != 0)
+	while (env[i] != NULL && ft_strncmp(env[++i], "PATH", 4) != 0)
 		;
 	p->path = ft_strndup(env[i], 5);
 	if (p->path == NULL)
